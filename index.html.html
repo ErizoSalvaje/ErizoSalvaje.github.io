@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Asesoría OBS 1:1 · ErizoSalvaje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FCF6E9; --card:#FFFDF8; --ink:#4B2E3D; --soft:#7D6270;
+  --pink:#F2A0B5; --rose:#DB6783; --peach:#F9B27A; --orange:#F2924A; --line:#F1E3D0;
+  --tint:#FDE6EC; --tint2:#FEEBD8;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#2A1B24; --card:#36232F; --ink:#FBEFE3; --soft:#CDB3BF; --line:#4A3140; --tint:#4A2B38; --tint2:#4A3328;}}
+:root[data-theme="dark"]{--bg:#2A1B24; --card:#36232F; --ink:#FBEFE3; --soft:#CDB3BF; --line:#4A3140; --tint:#4A2B38; --tint2:#4A3328;}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-weight:400;line-height:1.65;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:'Fredoka','Poppins',sans-serif;font-weight:600;line-height:1.15;letter-spacing:.2px}
+h2{font-size:clamp(26px,5vw,34px);margin-bottom:6px}
+h3{font-size:20px;margin-bottom:10px}
+section{padding:46px 0 0}
+.sub{color:var(--soft);font-weight:300;margin-bottom:22px}
+
+/* hero */
+.hero{padding:54px 0 10px;text-align:center;position:relative}
+.brand{display:inline-flex;gap:8px;align-items:center;background:var(--tint);color:var(--rose);padding:6px 16px;border-radius:99px;font-weight:500;font-size:14px}
+.hero h1{font-size:clamp(34px,8vw,58px);margin:20px auto 14px;max-width:640px}
+.hero p{max-width:540px;margin:0 auto;color:var(--soft);font-weight:300}
+.pad{width:min(300px,78%);margin:30px auto 6px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.chip{background:var(--card);border:1.5px solid var(--line);padding:8px 16px;border-radius:99px;font-size:14px;font-weight:500}
+.chip b{color:var(--orange);font-weight:600}
+.sprite{position:absolute;opacity:.9}
+.s1{left:2%;top:80px;width:34px}.s2{right:3%;top:150px;width:28px}.s3{right:9%;top:30px;font-size:26px}
+@media(max-width:560px){.s1,.s2{display:none}}
+
+/* cards */
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:24px}
+.card.pink{background:var(--tint);border-color:transparent}
+.card.peach{background:var(--tint2);border-color:transparent}
+.tag{display:inline-block;font-size:26px;margin-bottom:6px}
+ul{list-style:none;padding:0}
+li{padding-left:26px;position:relative;margin:7px 0;font-size:15px}
+li::before{content:"";position:absolute;left:2px;top:.55em;width:9px;height:9px;background:var(--pink);box-shadow:0 0 0 2px var(--tint)}
+.peach li::before{background:var(--peach);box-shadow:0 0 0 2px var(--tint2)}
+
+/* during */
+.big{padding:30px}
+.dur{display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap}
+.dur h3{margin:0}
+.badge{background:var(--orange);color:#fff;font-family:'Fredoka';font-weight:600;padding:4px 14px;border-radius:99px;font-size:15px}
+.two{columns:2 260px;column-gap:30px}
+.two li{break-inside:avoid}
+
+/* info */
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.info div{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:16px 18px}
+.info small{display:block;color:var(--rose);font-weight:600;font-size:13px}
+.info span{font-size:15px}
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--tint2);border-radius:20px;padding:20px 22px;margin-top:16px;font-size:15px}
+.note .e{font-size:24px;line-height:1.2}
+.guar{background:linear-gradient(135deg,var(--pink),var(--peach));color:#4B2E3D;border-radius:26px;padding:30px;text-align:center}
+.guar h2{margin-bottom:8px}
+.guar p{max-width:560px;margin:0 auto;font-size:15.5px}
+.value{text-align:center;max-width:600px;margin:0 auto}
+.value p{color:var(--soft);font-weight:300}
+footer{text-align:center;padding:44px 0 50px;color:var(--soft);font-size:14px}
+footer b{font-family:'Fredoka';color:var(--rose);font-size:18px;font-weight:600}
+.avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:4px solid var(--pink);display:block;margin:0 auto 12px}
+.px{display:flex;gap:8px;justify-content:center;margin-top:10px;font-size:20px}
+.row{display:flex;gap:16px;align-items:center}
+.row .tag{margin:0}.row h3{margin-bottom:2px}.row p{font-size:15px;color:var(--soft)}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.gbox{background:rgba(255,253,248,.6);border-radius:18px;padding:16px 20px;margin-top:14px;text-align:left}
+.gbox b{font-family:'Fredoka';font-weight:600;font-size:17px;display:block;margin-bottom:2px}
+.gbox p{font-size:15px;max-width:none;margin:0}
+.stack>*+*{margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <svg class="sprite s1" viewBox="0 0 11 8" shape-rendering="crispEdges" aria-hidden="true"><g fill="#F2A0B5"><rect x="2" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="2" y="2" width="7" height="1"/><rect x="1" y="3" width="2" height="1"/><rect x="4" y="3" width="3" height="1"/><rect x="8" y="3" width="2" height="1"/><rect x="0" y="4" width="11" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="2" y="5" width="7" height="1"/><rect x="10" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="3" y="7" width="2" height="1"/><rect x="6" y="7" width="2" height="1"/></g></svg>
+  <svg class="sprite s2" viewBox="0 0 11 8" shape-rendering="crispEdges" aria-hidden="true"><g fill="#F9B27A"><rect x="2" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="2" y="2" width="7" height="1"/><rect x="1" y="3" width="2" height="1"/><rect x="4" y="3" width="3" height="1"/><rect x="8" y="3" width="2" height="1"/><rect x="0" y="4" width="11" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="2" y="5" width="7" height="1"/><rect x="10" y="5" width="1" height="1"/><rect x="3" y="7" width="2" height="1"/><rect x="6" y="7" width="2" height="1"/></g></svg>
+  <span class="sprite s3" aria-hidden="true">🕹️</span>
+
+  <span class="brand">🦔 ErizoSalvaje presenta</span>
+  <h1>Asesoría OBS 1:1: tu streaming configurado desde cero</h1>
+  <p>¿Quieres hacer streaming pero OBS te parece complicado? Lo dejamos listo juntas/os para transmitir, y te enseño a manejarlo por tu cuenta.</p>
+
+  <svg class="pad" viewBox="0 0 360 210" role="img" aria-label="Set up gamer">
+    <circle cx="180" cy="86" r="84" fill="#FDE6EC"/>
+    <rect x="100" y="28" width="160" height="96" rx="10" fill="#4B2E3D"/>
+    <rect x="108" y="36" width="144" height="80" rx="5" fill="#FFFDF8"/>
+    <rect x="114" y="42" width="96" height="68" rx="4" fill="#F2A0B5"/>
+    <path d="M152 60l22 16-22 16z" fill="#FFFDF8"/>
+    <circle cx="231" cy="57" r="15" fill="#F9B27A"/>
+    <rect x="216" y="78" width="30" height="5" rx="2.5" fill="#F2A0B5"/><rect x="216" y="88" width="22" height="5" rx="2.5" fill="#F9B27A"/><rect x="216" y="98" width="28" height="5" rx="2.5" fill="#F2A0B5"/>
+    <rect x="170" y="122" width="20" height="22" fill="#4B2E3D"/>
+    <rect x="30" y="146" width="300" height="5" rx="2.5" fill="#F2A0B5"/>
+    <rect x="30" y="151" width="300" height="14" rx="7" fill="#F9B27A"/>
+    <rect x="58" y="165" width="10" height="36" rx="3" fill="#DB6783"/><rect x="292" y="165" width="10" height="36" rx="3" fill="#DB6783"/>
+    <rect x="112" y="139" width="86" height="8" rx="3" fill="#FCF6E9" stroke="#DB6783" stroke-width="2"/>
+    <ellipse cx="222" cy="143" rx="8" ry="5" fill="#FCF6E9" stroke="#DB6783" stroke-width="2"/>
+    <path d="M280 104a22 22 0 0 1 44 0" fill="none" stroke="#4B2E3D" stroke-width="6" stroke-linecap="round"/>
+    <rect x="274" y="100" width="12" height="22" rx="5" fill="#DB6783"/><rect x="318" y="100" width="12" height="22" rx="5" fill="#DB6783"/>
+    <rect x="300" y="118" width="4" height="28" fill="#4B2E3D"/>
+    <ellipse cx="52" cy="112" rx="6" ry="14" fill="#F2A0B5" transform="rotate(-25 52 112)"/><ellipse cx="68" cy="112" rx="6" ry="14" fill="#F9B27A" transform="rotate(25 68 112)"/><ellipse cx="60" cy="106" rx="6" ry="15" fill="#DB6783"/>
+    <rect x="48" y="126" width="24" height="20" rx="4" fill="#F2924A"/>
+  </svg>
+
+  <div class="chips">
+    <span class="chip">⏱️ <b>2 horas</b> 1:1</span>
+    <span class="chip">💻 Discord o Google Meet</span>
+    <span class="chip">✨ No necesitas experiencia en OBS</span>
+  </div>
+</header>
+
+<section>
+  <div class="card pink">
+    <span class="tag">🎮</span>
+    <h2>Mi misión</h2>
+    <p style="color:var(--soft);font-weight:300;margin-top:8px">Que entiendas cómo se maneja el programa para transmitir y que tu stream se vea lo más profesional posible. Como OBS tiene muchísimas funciones, la asesoría es de nivel básico a intermedio: sin saturarte con funciones avanzadas.</p>
+  </div>
+</section>
+
+<section>
+  <h2>¿Qué incluye?</h2>
+  <p class="sub">Todo lo que necesitas para empezar a transmitir.</p>
+  <div class="stack">
+    <div class="card row">
+      <span class="tag">📝</span>
+      <div><h3>Antes de la asesoría</h3><p>Preparación de la configuración ideal para tu PC.</p></div>
+    </div>
+    <div class="card big">
+      <div class="dur"><span class="tag" style="margin:0">👾</span><h3>Durante la asesoría</h3><span class="badge">2 horas 1:1</span></div>
+      <p class="sub" style="margin-bottom:14px">Configuramos todo en vivo, paso a paso.</p>
+      <ul class="two">
+        <li>Instalación y configuración de OBS Studio</li>
+        <li>Configuración de Twitch o tu plataforma</li>
+        <li>Transmisión desde PC o consola + PC</li>
+        <li>Configuración de capturadora, si usas consola</li>
+        <li>Micrófono y audio</li>
+        <li>Cámara / webcam</li>
+        <li>Escenas</li>
+        <li>Integración de tus overlays</li>
+        <li>Resolución, FPS, bitrate y calidad según tu equipo e internet</li>
+        <li>Cómo iniciar y finalizar un stream</li>
+        <li>Cómo grabar y sacar clips desde OBS</li>
+        <li>Hacemos una prueba de stream para comprobar que todo funciona</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Regalos 🎁</h2>
+  <p class="sub">Para que sigas avanzando después de la sesión.</p>
+  <div class="grid g2">
+    <div class="card peach row"><span class="tag">📘</span><div><h3>Guía básica de OBS</h3><p>Solución a errores comunes.</p></div></div>
+    <div class="card peach row"><span class="tag">🖼️</span><div><h3>3 plantillas de overlays</h3><p>Incluidas para tu stream.</p></div></div>
+  </div>
+  <div class="card pink" style="margin-top:16px">
+    <span class="tag">✂️</span>
+    <h3>¿Incluye edición?</h3>
+    <p style="font-size:15px">Incluye la herramienta para sacar clips directo desde OBS y consejos para grabar y editar. <b style="font-weight:600">No</b> incluye pasos detallados de programas de edición: el foco es tu OBS y tu setup funcionando.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Detalles de la sesión</h2>
+  <p class="sub">Todo lo que necesitas para reservar.</p>
+  <div class="info">
+    <div><small>Duración</small><span>2 horas</span></div>
+    <div><small>Modalidad</small><span>Virtual por Discord o Google Meet</span></div>
+    <div><small>Pago</small><span><b style="font-weight:600">USD 21</b></span></div>
+    <div><small>Reserva</small><span>La asesoría se reserva por medio de Fiverr; una vez confirmado el pago se agenda la sesión</span></div>
+  </div>
+  <div class="note"><span class="e">🪪</span><span>La sesión solo se realiza a <b style="font-weight:600">mayores de edad (+18)</b>.</span></div>
+</section>
+
+<section>
+  <h2>Cosas importantes a tener en cuenta</h2>
+  <p class="sub">Para que la experiencia sea clara desde el inicio.</p>
+  <div class="stack">
+    <div class="note" style="margin:0"><span class="e">⚠️</span><span>La configuración se adapta a las capacidades reales de tu equipo y conexión. No se garantiza una resolución o cantidad de FPS específica si tu hardware o internet no lo permiten.</span></div>
+    <div class="note" style="margin:0"><span class="e">🎙️</span><span>Se grabará el audio de lo que configuremos y se tomarán algunas capturas de pantalla como evidencia de entrega en Fiverr.</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="guar">
+    <span class="tag">🛡️</span>
+    <h2>Garantía de cumplimiento</h2>
+    <div class="gbox">
+      <b>Todo funcionando</b>
+      <p>Al finalizar la sesión hacemos una prueba de stream para confirmar que todo quedó funcionando. Además, incluyo una sesión adicional de revisión por si algo de lo configurado necesita ajustarse.</p>
+    </div>
+    <div class="gbox">
+      <b>Reprogramación</b>
+      <p>Si no puedes asistir, puedes reprogramar tu sesión avisando con al menos 12 horas de anticipación. Si tampoco asistes a la sesión reprogramada, la asesoría se da por completada y recibirás un plan paso a paso para configurar todo por tu cuenta, ya sin acompañamiento en vivo.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="value">
+    <span class="tag">💎</span>
+    <h2>El valor de mi asesoría</h2>
+    <p>Te acompaño en la configuración de OBS que necesitas, con consejos y herramientas que uso como streamer, para que empieces a hacer streaming sin dolores de cabeza. Además, entenderás cómo funciona el programa para que puedas usarlo por tu cuenta después.</p>
+  </div>
+</section>
+
+<footer>
+  <img class="avatar" src="data:image/jpeg;base64,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" alt="ErizoSalvaje">
+  <b>🦔 ErizoSalvaje</b>
+  <div class="px" aria-hidden="true">👾 🎮 🕹️</div>
+</footer>
+
+</div>
+</body>
+</html>
